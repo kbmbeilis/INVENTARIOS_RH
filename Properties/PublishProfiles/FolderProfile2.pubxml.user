@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\kbm_6\OneDrive\Escritorio\ACTUALIZAR_DATOS</_PublishTargetUrl>
+    <History>True|2023-10-11T20:38:36.5036424Z;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=Datos_personales.db</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

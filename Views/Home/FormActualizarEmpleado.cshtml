@@ -1,0 +1,439 @@
+﻿@model empleado
+@{
+    ViewData["Title"] = "Actualizar empleado";
+}
+
+<div class="row justify-content-center mt-5">
+    <h4 class="text-center">
+        GOBIERNO DEL ESTADO DE SONORA
+    </h4>
+    <br />
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="text-center">Actualice su información</h5>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Home" method="post">
+                    <br />
+                    <h3>Datos personales</h3>
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>RFC</left>
+                            <input type="text" class="form-control" asp-for="rfc" readonly />
+                        </div>
+                        <div class="col">
+                            <left>Numero de empleado:</left>
+                            <input type="text" class="form-control" asp-for="nemp" readonly />
+                        </div>
+                        <div class="col">
+                            <left>CURP</left>
+                            <input id="curp" type="text" class="form-control curp" asp-for="curp" readonly />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="mb-3">
+                        <left>Nombre</left>
+                        <input type="text" class="form-control" asp-for="nombre" />
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Fecha nacimiento</left>
+                            <input id="fechaNacimiento" type="text" class="form-control fechaNacimiento" />
+                        </div>
+                        <div class="col">
+                            <left>Lugar nacimiento</left>
+                            <input id="lugarNacimiento" type="text" class="form-control" asp-for="lugarNacimiento" />
+                        </div> <div class="col">
+                            <left>Nacionalidad</left>
+                            <input id="nacionalidad" type="text" class="form-control" asp-for="nacionalidad" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Estado civil</left>
+                            <select class="form-select" asp-for="estadoCivil">
+                                <option selected>SELECCIONAR</option>
+                                <option value="SOLTERO(A)">SOLTERO(A)</option>
+                                <option value="CASADO(A)">CASADO(A)</option>
+                                <option value="UNIÓN LIBRE">UNIÓN LIBRE</option>
+                                <option value="DIVORCIADO(A)">DIVORCIADO(A)</option>
+                                <option value="VIUDO(A)">VIUDO(A)</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>Genero</left>
+                            <select id="genero" class="form-select" asp-for="genero">
+                                <option selected>SELECCIONAR</option>
+                                <option value="MASCULINO">MASCULINO</option>
+                                <option value="FEMENINO">FEMENINO</option>
+                                <option value="NO BINARIO">NO BINARIO</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>Origen Etnico</left>
+                            <input type="text" class="form-control" asp-for="origenEtnico" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Teléfono</left>
+                            <input type="text" class="form-control" asp-for="Telefono" />
+                        </div>
+                        <div class="col">
+                            <left>Celular</left>
+                            <input type="text" class="form-control" asp-for="Celular" />
+                        </div>
+                        <div class="col">
+                            <left>Correo</left>
+                            <input type="text" class="form-control" asp-for="correo" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Calle</left>
+                            <input type="text" class="form-control" asp-for="calle" />
+                        </div>
+                        <div class="col">
+                            <left>Entre calle</left>
+                            <input type="text" class="form-control" asp-for="entreCalles" />
+                        </div>
+                        <div class="col">
+                            <left>Numero Ext.</left>
+                            <input type="text" class="form-control" asp-for="numero" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Colonia</left>
+                            <input type="text" class="form-control" asp-for="colonia" />
+                        </div>
+                        <div class="col">
+                            <left>Municipio</left>
+                            <input type="text" class="form-control" asp-for="municipio" />
+                        </div>
+                        <div class="col">
+                            <left>Código postal</left>
+                            <input type="text" class="form-control" asp-for="cp" />
+                        </div>
+                    </div>
+
+
+                    <br />
+                    <br />
+                    <h3>Datos de escolaridad</h3>
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Escolaridad</left>
+                            <select class="form-select" asp-for="Escolaridad">
+                                <option selected>SELECCIONAR</option>
+                                <option value="PRIMARIA">PRIMARIA</option>
+                                <option value="SECUNDARIA">SECUNDARIA</option>
+                                <option value="PREPARATORIA">PREPARATORIA</option>
+                                <option value="CARRERA TECNICA Y/O TECNICA">CARRERA TECNICA Y/O TECNICA</option>
+                                <option value="ESTUDIOS SUPERIORES UNIVERSITARIOS">ESTUDIOS SUPERIORES UNIVERSITARIOS</option>
+                                <option value="POSGRADO">POSGRADO</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>Escolaridad</left>
+                            <input type="text" class="form-control" asp-for="Escolaridad2" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>¿Tiene especialidad?</left>
+                            <select class="form-select" asp-for="tieneEspecialidad">
+                                <option selected>SELECCIONAR</option>
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>¿Qué especialidad?</left>
+                            <input type="text" class="form-control" asp-for="Especialidad" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>¿Estudia actualmente?</left>
+                            <select class="form-select" asp-for="estudiaActualmente">
+                                <option selected>SELECCIONAR</option>
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>¿Qué estudia?</left>
+                            <input type="text" class="form-control" asp-for="queEstudia" />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+
+
+                    <h3>Datos laborales</h3>
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Ubicación laboral</left>
+                            <input type="text" class="form-control" asp-for="ubicacionLaboral" />
+                        </div>
+                        <div class="col">
+                            <left>Puesto funcional</left>
+                            <input type="text" class="form-control" asp-for="puestoFuncional" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Funcion 1</left>
+                            <input type="text" class="form-control" asp-for="funcion1" />
+                        </div>
+                        <div class="col">
+                            <left>Funcion 2</left>
+                            <input type="text" class="form-control" asp-for="funcion2" />
+                        </div>
+                        <div class="col">
+                            <left>Funcion 3</left>
+                            <input type="text" class="form-control" asp-for="funcion3" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>¿Tiene discapacidad?</left>
+                            <select class="form-select" asp-for="tieneDiscapacidad">
+                                <option selected>SELECCIONAR</option>
+                                <option value="SI">SI</option>
+                                <option value="NO">NO</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>Tipo de discapacidad</left>
+                            <input type="text" class="form-control" asp-for="tipoDiscapacidad" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Jornada</left>
+                            <select class="form-select" asp-for="jornada">
+                                <option selected>SELECCIONAR</option>
+                                <option value="DIURNA">DIURNA</option>
+                                <option value="NOCTURNA">NOCTURNA</option>
+                                <option value="MIXTA">MIXTA</option>
+                                <option value="ACUMULADA">ACUMULADA</option>
+                                <option value="ACUMULADA CONTINUA">ACUMULADA CONTINUA</option>
+                                <option value="ESPECIAL">ESPECIAL</option>
+                                <option value="ESPECIAL CONTINUA">ESPECIAL CONTINUA</option>
+                                <option value="OTRA">OTRA</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>Otra jornada</left>
+                            <input type="text" class="form-control" asp-for="otraJornada" />
+                        </div>
+                        <div class="col">
+                            <left>Dias de trabajo</left>
+                            <input type="text" class="form-control" asp-for="diasTrabajo" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Turno laboral</left>
+                            <select class="form-select" asp-for="turnoLaboral">
+                                <option selected>NO ESPECIFICADO</option>
+                                <option value="MATUTINO">MATUTINO</option>
+                                <option value="VESPERTINO">VESPERTINO</option>
+                                <option value="NOCTURNO">NOCTURNO</option>
+                                <option value="MIXTO">MIXTO</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <left>Horario</left>
+                            <input type="text" class="form-control" asp-for="horario" />
+                        </div>
+                        <div class="col">
+                            <left>Tipo de nomina</left>
+                            <input type="text" class="form-control" asp-for="NOMINA" />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+
+                    <h3>Datos fiscales</h3>
+                    <div class="row g-3">
+                        <div class="col">
+                            <left>Calle</left>
+                            <input type="text" class="form-control" asp-for="CALLESAT" />
+                        </div>
+                        <div class="col">
+                            <left>Número</left>
+                            <input type="text" class="form-control" asp-for="NUMEROSAT" />
+                        </div>
+                        <div class="col">
+                            <left>Código postal</left>
+                            <input type="text" class="form-control" asp-for="CPSAT" />
+                        </div>
+                        <div class="col">
+                            <left>Estatus en el padron</left>
+                            <input type="text" class="form-control" asp-for="ESTATUSENELPADRON" />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                    <h3>Notas</h3>
+                    <div class="mb-3">
+                        <textarea type="text" class="form-control" asp-for="NOTAS"><</textarea>
+                    </div>
+                    <br />
+                    <input hidden type="text" class="form-control" asp-for="Id" />
+                    <div class="row">
+                        <div class="col-md-6 float-center">
+                            <button id="ButtonForm" class="btn btn-primary" type="submit" formaction="ActualizarEmpleado">Actualizar</button>
+                        </div>
+                    </div>
+                </form>
+                <button id="ButtonForm" class="btn btn-primary" data-toggle="modal" data-target="#miModal">Descargar</button>
+ 
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detalles del Modelo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button id="ButtonForm" type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var curpValue = document.getElementById("curp").value;
+
+            //obtener fecha de nacimiento
+            var Año = curpValue.substring(4, 6);
+            var Mes = curpValue.substring(6, 8);
+            var Dia = curpValue.substring(8, 10);
+            var fechaNacimiento = Año + "/" + Mes + "/" + Dia;
+
+            //obtener genero
+            var caracterG = curpValue.substring(10, 11);
+            var genero = "";
+
+            if (caracterG.toUpperCase() === 'H') {
+                genero = 'MASCULINO';
+            } else if (caracterG.toUpperCase() === 'M') {
+                genero = 'FEMENINO';
+            } else {
+                genero = 'NO ESPECIFICADO';
+            }
+
+            //obtener lugar de nacimiento
+            var caracteresLN = curpValue.substring(11, 13);
+            var lugarNacimiento = "";
+            if (caracteresLN.toUpperCase() === 'AS') {
+                lugarNacimiento = 'AGUASCALIENTES';
+            } else if (caracteresLN.toUpperCase() === 'BC') {
+                lugarNacimiento = 'BAJA CALIFORNIA';
+            } else if (caracteresLN.toUpperCase() === 'BS') {
+                lugarNacimiento = 'BAJA CALIFORNIA SUR';
+            } else if (caracteresLN.toUpperCase() === 'CC') {
+                lugarNacimiento = 'CAMPECHE';
+            } else if (caracteresLN.toUpperCase() === 'CS') {
+                lugarNacimiento = 'CHIAPAS';
+            } else if (caracteresLN.toUpperCase() === 'CH') {
+                lugarNacimiento = 'CHIHUAHUA';
+            } else if (caracteresLN.toUpperCase() === 'DF') {
+                lugarNacimiento = 'CIUDAD DE MEXICO';
+            } else if (caracteresLN.toUpperCase() === 'CL') {
+                lugarNacimiento = 'COAHUILA';
+            } else if (caracteresLN.toUpperCase() === 'CM') {
+                lugarNacimiento = 'COLIMA';
+            } else if (caracteresLN.toUpperCase() === 'DG') {
+                lugarNacimiento = 'DURANGO';
+            } else if (caracteresLN.toUpperCase() === 'GT') {
+                lugarNacimiento = 'GUANAJUATO';
+            } else if (caracteresLN.toUpperCase() === 'GR') {
+                lugarNacimiento = 'GUERRERO';
+            } else if (caracteresLN.toUpperCase() === 'HG') {
+                lugarNacimiento = 'HIDALGO';
+            } else if (caracteresLN.toUpperCase() === 'JC') {
+                lugarNacimiento = 'JALISCO';
+            } else if (caracteresLN.toUpperCase() === 'MC') {
+                lugarNacimiento = 'MÉXICO';
+            } else if (caracteresLN.toUpperCase() === 'MN') {
+                lugarNacimiento = 'MICHOACÁN';
+            } else if (caracteresLN.toUpperCase() === 'MS') {
+                lugarNacimiento = 'MORELOS';
+            } else if (caracteresLN.toUpperCase() === 'NT') {
+                lugarNacimiento = 'NAYARIT';
+            } else if (caracteresLN.toUpperCase() === 'NL') {
+                lugarNacimiento = 'NUEVO LEÓN';
+            } else if (caracteresLN.toUpperCase() === 'OC') {
+                lugarNacimiento = 'OAXACA';
+            } else if (caracteresLN.toUpperCase() === 'PL') {
+                lugarNacimiento = 'PUEBLA';
+            } else if (caracteresLN.toUpperCase() === 'QO') {
+                lugarNacimiento = 'QUERÉTARO';
+            } else if (caracteresLN.toUpperCase() === 'QR') {
+                lugarNacimiento = 'QUINTANA ROO';
+            } else if (caracteresLN.toUpperCase() === 'SP') {
+                lugarNacimiento = 'SAN LUIS POTOSÍ';
+            } else if (caracteresLN.toUpperCase() === 'SL') {
+                lugarNacimiento = 'SINALOA';
+            } else if (caracteresLN.toUpperCase() === 'SR') {
+                lugarNacimiento = 'SONORA';
+            } else if (caracteresLN.toUpperCase() === 'TC') {
+                lugarNacimiento = 'TABASCO';
+            } else if (caracteresLN.toUpperCase() === 'TS') {
+                lugarNacimiento = 'TAMAULIPAS';
+            } else if (caracteresLN.toUpperCase() === 'TL') {
+                lugarNacimiento = 'TLAXCALA';
+            } else if (caracteresLN.toUpperCase() === 'VZ') {
+                lugarNacimiento = 'VERACRUZ';
+            } else if (caracteresLN.toUpperCase() === 'YN') {
+                lugarNacimiento = 'YUCATÁN';
+            } else if (caracteresLN.toUpperCase() === 'ZS') {
+                lugarNacimiento = 'ZACATECAS';
+            } else {
+                lugarNacimiento = 'NO ESPECIFICADO';
+            }
+
+            //obtener nacionalidad
+            var caracteresN = curpValue.substring(11, 13);
+            var nacionalidad = "";
+            if (caracteresN.toUpperCase() === 'NE') {
+                nacionalidad = 'EXTRANJERO(A)';
+            } else {
+                nacionalidad = 'MEXICANO(A)';
+            }
+
+            document.getElementById("fechaNacimiento").value = fechaNacimiento;
+            document.getElementById("genero").value = genero;
+            document.getElementById("lugarNacimiento").value = lugarNacimiento;
+            document.getElementById("nacionalidad").value = nacionalidad;
+        });
+    </script>

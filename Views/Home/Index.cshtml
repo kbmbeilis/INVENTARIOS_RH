@@ -1,0 +1,36 @@
+﻿@model empleado
+@{
+    ViewData["Title"] = "Inicio";
+}
+<div class="row justify-content-center mt-5">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="text-center">
+                    DIRECCIÓN GENERAL DE RECURSOS HUMANOS
+                </h5>
+                <h6 class="text-center">Busquemos su información</h6>
+            </div>
+            <div class="card-body">
+                <form asp-action="BuscarEmpleado" asp-controller="Home" method="post">
+                    <div class="mb-3">
+                        <center>Ingrese su RFC o su CURP</center>
+                        <input type="text" class="form-control" name="infoEmpleado"/>
+                    </div>
+                    @if (ViewBag.Mensaje != null)
+                        {
+                            <div class="alert alert-danger">
+                                @ViewBag.Mensaje
+                            </div>
+                        }
+                    <div class="mb-3">
+                        <div class="d-grid">
+                            <button id="ButtonForm" class="btn btn-primary" type="submit">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
